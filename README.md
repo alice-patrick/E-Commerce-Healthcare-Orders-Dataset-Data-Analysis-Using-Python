@@ -1,2 +1,5 @@
-# E-Commerce-Healthcare-Orders-Dataset-Data-Analysis-Using-SQL
-Comprehensive SQL script for cleaning, organizing, and analyzing e-commerce order data. Includes database creation, data insertion, and statistical queries, ready for visualization in Tableau.
+This project cleans and preprocesses an e-commerce orders dataset, focusing on healthcare-related orders. It provides visual insights into sales trends, customer behavior, delivery performance, and product popularity, comparing healthcare products with non-healthcare ones.
+
+
+
+
