@@ -23,7 +23,8 @@ E-commerce data can reveal valuable insights about customer behavior, sales perf
 ## Dataset
 - **Source:** [Kaggle - E-Commerce Healthcare Orders Dataset](https://www.kaggle.com/datasets/adishgolechha/ecommerce-healthcare-orders-dataset).
 - **Size:** 18 columns x 1589 rows (contaiing multiple fields related to order details, sales, delivery, and customer preferences).
-- **Description:** Includes information on product categories (healthcare vs. non-healthcare), revenue, delivery times, and payment methods.
+- **Description:** Includes columns such as Date Placed, Date Delivered, Cart, isCOD, Status, and Remarks.
+
 
 ---
 
@@ -37,66 +38,72 @@ E-commerce data can reveal valuable insights about customer behavior, sales perf
 ---
 
 ## Tools and Libraries
-Python Libraries:
-pandas, numpy: For data cleaning and preprocessing.
-matplotlib, seaborn: For exploratory data visualization.
-Tableau: For interactive dashboards and advanced visualizations.
+- **Python Libraries:**
+- `pandas`, `numpy`: Data manipulation and preprocessing.
+- `ast`: For parsing structured data in text format.
+- **Tableau:** For interactive dashboards and advanced visualizations.
 
 ---
 
 ## Methodology
-1. Data Cleaning and Preprocessing
-Tools Used: Python (pandas and numpy).
-Steps:
-Removed duplicate and irrelevant entries.
-Handled missing values using mean/mode imputation.
-Ensured consistent formatting for categorical data (e.g., Healthcare and Non-Healthcare).
-Created a calculated field for delivery time (Date Delivered - Date Placed).
-2. Feature Engineering
-Derived KPIs, such as:
-% Healthcare Revenue: Calculated as [Healthcare Revenue] / [Total Revenue].
-Average Order Value: Computed as Sum(Revenue) / Count(Order ID).
-Late Delivery Percentage: Count(Late Deliveries) / Total Orders.
-3. Visualization in Tableau
-Designed interactive dashboards to visualize:
-Sales trends by state and category.
-Customer behavior, including order frequency and average order value.
-Delivery performance metrics, such as average delivery times and late delivery rates.
-Product popularity and revenue contribution for healthcare items.
-Payment method preferences and confirmation methods for healthcare orders.
-Findings
-Sales Overview
+1. **Data Cleaning and Preprocessing**
+- Converted date columns (Date Placed, Date Delivered, and Date Returned) to datetime format, handling parsing errors gracefully.
+- Replaced missing values:
+- City and State were filled with "Unknown".
+- Remarks was filled with "No Remarks".
+- Created new columns: (Delivery Duration, Status Category, Product Count, Order Month, Order Year and isCOD).
+  - Delivery Duration: Calculated as the difference between Date Delivered and Date Placed.
+  - Status Category: Categorized Status into "Completed," "Returned," or "Other".
+  - Product Count: Extracted the number of products in each order from the Cart column using Python's ast library.
+  - Order Month and Year: Extracted month names and years from Date Placed.
+  - isCOD Descriptive Values: Converted the isCOD boolean column into "Yes" or "No".
+2. **Feature Engineering**
+- Defined metrics to analyze order behavior and delivery efficiency, such as average delivery duration, late delivery percentages, and monthly order distribution.
+3. **Visualization in Tableau**
+- Visualized data through Tableau dashboards, highlighting:
+  -Order frequency and revenue trends by city.
+  -Delivery performance, including average delivery duration and product counts.
+  -Customer payment preferences and healthcare order proportions.
 
-Top States: Certain regions dominate in healthcare sales, indicating geographically concentrated demand.
-Trends: Monthly healthcare sales display steady growth, driven by recurring product purchases.
-Customer Insights
+---
 
-Order Frequency: Urban areas see the highest order frequencies.
-Average Order Value: Healthcare orders consistently outperform non-healthcare categories in value.
-Delivery Performance
+## Findings
+1. **Sales Otherview**
+- Top States: Certain regions dominate in healthcare sales, indicating geographically concentrated demand.
+- Trends: Monthly healthcare sales display steady growth, driven by recurring product purchases.
 
-Average Delivery Time: Healthcare orders take slightly longer to deliver due to specialized requirements.
-Late Deliveries: The rate of late deliveries has improved over time.
-Healthcare Product Insights
+2. **Customer Insights**
+- Order Frequency: Urban areas see the highest order frequencies.
+- Average Order Value: Healthcare orders consistently outperform non-healthcare categories in value.
 
-Top Products: A handful of healthcare products account for a significant portion of revenue.
-Revenue Distribution: Revenue is heavily skewed towards these popular items.
-Payment and Confirmation Insights
+3. **Delivery Performance**
+- Average Delivery Time: Healthcare orders take slightly longer to deliver due to specialized requirements.
+- Late Deliveries: The rate of late deliveries has improved over time.
 
-COD Preference: Cash on Delivery (COD) remains popular, especially for healthcare products.
-Confirmation Methods: IVR confirmation is widely used for order verification.
-Results and Insights
-Revenue Contribution: Healthcare orders represent a substantial portion of total revenue in certain regions.
-Delivery Efficiency: Delivery times are improving, yet remain a challenge for certain healthcare items.
-Customer Behavior: Urban areas dominate in healthcare demand, and average order values are higher for healthcare items.
-Product Trends: Popular healthcare products drive a disproportionate share of revenue, highlighting cross-sell opportunities.
-Conclusion and Recommendations
-Key Takeaways
-Focus on High-Demand Regions: Tailor marketing strategies to states with the highest healthcare order volumes.
-Optimize Delivery Operations: Prioritize efficiency improvements for healthcare orders to reduce delivery times further.
-Leverage Product Popularity: Promote high-performing products while exploring opportunities to boost sales of lesser-known items.
-Refine Payment Methods: Enhance support for COD while encouraging digital payment options for greater convenience.
-How to Run the Project
-Open the Tableau dashboard from this link.
-Use the interactive filters to explore different categories and KPIs.
-Analyze findings across dashboards to draw insights and take informed actions.
+4. **Healthcare Product Insights**
+- Top Products: A handful of healthcare products account for a significant portion of revenue.
+- Revenue Distribution: Revenue is heavily skewed towards these popular items.
+
+5. **Payment and Confirmation Insights**
+- COD Preference: Cash on Delivery (COD) remains popular, especially for healthcare products.
+- Confirmation Methods: IVR confirmation is widely used for order verification.
+
+6. **Results and Insights**
+- Revenue Contribution: Healthcare orders represent a substantial portion of total revenue in certain regions.
+- Delivery Efficiency: Delivery times are improving, yet remain a challenge for certain healthcare items.
+- Customer Behavior: Urban areas dominate in healthcare demand, and average order values are higher for healthcare items.
+- Product Trends: Popular healthcare products drive a disproportionate share of revenue, highlighting cross-sell opportunities.
+
+---
+
+## Conclusion and Recommendations
+**Key Takeaways**
+- Focus on High-Demand Regions: Tailor marketing strategies to states with the highest healthcare order volumes.
+- Optimize Delivery Operations: Prioritize efficiency improvements for healthcare orders to reduce delivery times further.
+- Leverage Product Popularity: Promote high-performing products while exploring opportunities to boost sales of lesser-known items.
+- Refine Payment Methods: Enhance support for COD while encouraging digital payment options for greater convenience.
+
+## How to Run the Project  
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/alice-patrick/E-Commerce-Healthcare-Orders-Dataset-Data-Analysis-Using-Python.git 
