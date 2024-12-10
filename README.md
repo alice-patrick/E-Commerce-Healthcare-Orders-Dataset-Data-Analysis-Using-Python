@@ -106,4 +106,17 @@ E-commerce data can reveal valuable insights about customer behavior, sales perf
 ## How to Run the Project  
 1. Clone this repository:  
    ```bash
-   git clone https://github.com/alice-patrick/E-Commerce-Healthcare-Orders-Dataset-Data-Analysis-Using-Python.git 
+   git clone https://github.com/alice-patrick/E-Commerce-Healthcare-Orders-Dataset-Data-Analysis-Using-Python.git
+
+![image](https://github.com/user-attachments/assets/07776ed7-1f86-47a1-beaa-8d0e5a5bb205)
+
+![image](https://github.com/user-attachments/assets/e50c076a-9e8f-4bc4-8d61-60994712256c)
+
+![image](https://github.com/user-attachments/assets/03b8c502-b0aa-488b-a1ea-05aac9326213)
+
+![image](https://github.com/user-attachments/assets/674a15c3-ea5b-4a07-8d7e-deba87459b58)
+
+![image](https://github.com/user-attachments/assets/96f92be7-cae4-4a70-9da4-979f19c5c92d)
+
+
+
